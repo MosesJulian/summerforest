@@ -32,8 +32,8 @@ const CarouselItems: CarouselItem[] = [
     },
 ]
 
-const SlideDuration = 3000;
-const TransitionDuration = 500;
+const SlideDuration = 5000;
+const TransitionDuration = 1000;
 
 const Body = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
