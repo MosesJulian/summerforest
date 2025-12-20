@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
-        <footer>
-            <p>© 2024 Summerforest. All rights reserved.</p>
+        <footer className="items-center justify-center text-center p-12">
+            <span className="font-semibold text-xl">© 2024 Summerforest. All rights reserved.</span>
         </footer>
     );
 };
