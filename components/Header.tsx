@@ -1,16 +1,32 @@
 "use client";
 
+import useWindowEvents from "@/hooks/useWindowEvents";
 import Image from "next/image";
 import { useState } from "react";
 
+let isScrolling: NodeJS.Timeout;
+const nav = window?.document.querySelector("nav");
+
 const Header = () => {
     const [showImage, setShowImage] = useState(false);
+    
+    const handleScroll = () => {
+        nav?.classList.add("-translate-y-full");
 
+        window.clearTimeout(isScrolling);
+        
+        isScrolling = setTimeout(() => {
+            nav?.classList.remove("-translate-y-full");
+        }, 150);
+    };
+
+
+    useWindowEvents ("scroll", handleScroll);
     return (
         <>
             {showImage && (
                 <div 
-                    className="absolute z-50 w-full h-full bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8"
+                    className="fixed z-50 w-full h-full bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8"
                     onClick={() => setShowImage(false)}
                 >
                 <Image 
@@ -23,7 +39,7 @@ const Header = () => {
                 <span className="text-text-secondary text-xl">Tap anywhere to close</span>
                 </div>
             )}
-            <nav className="w-full px-8 py-4 flex justify-between items-center fixed top-0 left-0 z-20 bg-background/30 backdrop-blur-lg">
+            <nav className="w-full px-8 py-4 flex justify-between items-center fixed top-0 left-0 z-20 bg-background/30 backdrop-blur-lg transition-transform duration-500">
                 <div className="flex items-center justify-around space-x-4">
                     <Image
                         src="/logo.jpeg"
