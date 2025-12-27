@@ -18,3 +18,21 @@
 body {
   font-family: var(--font-ubuntu), var(--font-ubuntu-mono), Arial, Helvetica, sans-serif;
 }
+
+[data-inviewport= "fade-slide-right"] {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-inviewport='fade-slide-left'] {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-inviewport = "fade-slide-right"].in-viewport,
+[data-inviewport = "fade-slide-left"].in-viewport {
+  opacity: 1;
+  transform: translateX(0);
+}

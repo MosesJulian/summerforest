@@ -1,9 +1,11 @@
+import About from "./About";
 import Hero from "./Hero";
 
 const Body = () => {
     return (
-        <div className="flex flex-col items-center justify-center space-y-8">
+        <div className="flex flex-col items-center justify-center">
             <Hero />
+            <About />
         </div>
     );
 };
