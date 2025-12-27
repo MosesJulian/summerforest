@@ -5,12 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 
 let isScrolling: NodeJS.Timeout;
-const nav = window?.document.querySelector("nav");
 
 const Header = () => {
     const [showImage, setShowImage] = useState(false);
     
     const handleScroll = () => {
+        const nav = window?.document.querySelector("nav");
+        
         nav?.classList.add("-translate-y-full");
 
         window.clearTimeout(isScrolling);
