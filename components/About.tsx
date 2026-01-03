@@ -21,7 +21,7 @@ const About = () => {
     }, []);
 
     return (
-        <section className="flex flex-col">
+        <section className="flex flex-col overflow-x-hidden">
             <div 
             data-inviewport="fade-slide-left"
             className="grid grid-cols-5 gap-6 items-center justify-center bg-linear-to-b from-primary/60 to-secondary/60">
