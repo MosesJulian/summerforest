@@ -37,6 +37,7 @@ const TransitionDuration = 1000;
 
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const bookingMessage = encodeURIComponent("Hello, I would like to book a stay at Summerforest Watukarung. Could you please provide me with more information?");
     
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % CarouselItems.length);
@@ -70,7 +71,7 @@ const Hero = () => {
                                     {item.caption}
                                     </p>
                                     <Link
-                                        href={"https://www.booking.com/hotel/id/summerforest-watukarung.html"}
+                                        href={`https://api.whatsapp.com/send/?phone=%2B6285280010087&text=${bookingMessage}&type=phone_number&app_absent=0`}
                                         target="_blank"
                                         className="mt-6 px-8 py-3 bg-primary text-text-secondary font-medium rounded-lg shadow-lg hover:bg-secondary transition duration-300 transform hover:scale-105"    
                                     >
