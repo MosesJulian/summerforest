@@ -27,7 +27,7 @@ const Header = () => {
         <>
             {showImage && (
                 <div 
-                    className="fixed z-50 w-full h-full bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8"
+                    className="fixed z-100 w-full h-full bg-black/40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8"
                     onClick={() => setShowImage(false)}
                 >
                 <Image 
@@ -49,7 +49,7 @@ const Header = () => {
                         className="inline-block rounded-full"
                         onClick={() => setShowImage(true)}
                     />
-                    <span className="font-bold text-text-secondary text-2xl">Summerforest</span>
+                    <span className="font-bold text-text-secondary text-2xl [text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]">Summerforest</span>
                 </div>
                 <div className="space-x-4">
                     <button className="bg-primary text-text-secondary p-2 px-4 rounded-lg hover:bg-secondary hover:scale-110 duration-300">Home</button>

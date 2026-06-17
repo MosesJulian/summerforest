@@ -32,8 +32,8 @@ const CarouselItems: CarouselItem[] = [
     },
 ]
 
-const SlideDuration = 5000;
-const TransitionDuration = 1000;
+const FadeDuration = 7500;
+const TransitionDuration = 2500;
 
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,30 +44,40 @@ const Hero = () => {
     }
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, SlideDuration);
+        const interval = setInterval(nextSlide, FadeDuration);
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <section className='w-full h-screen block overflow-hidden '>
-                <div className="relative w-full h-full overflow-hidden">
+        <section className='w-full h-screen block overflow-hidden'>
+                <div className="relative z-0 w-full h-full overflow-hidden">
                     <div
-                    className='flex h-full transition-transform ease-in-out'
-                    style={{ transform: `translateX(-${currentIndex * 100}%)`, transitionDuration: `${TransitionDuration}ms` }}
+                        className='relative w-full h-full'
                     >
-                        {CarouselItems.map((item, index) => (
-                            <div key={index} className='w-full h-full relative flex-none bg-linear-b bg-background/30'>
+                        {CarouselItems.map((item, index) => {
+                            const isActive = index === currentIndex;
+                            return (
+                            <div 
+                                key={index}
+                                className='absolute inset-0 w-full h-full transition-opacity ease-in-out'
+                                style={{
+                                    opacity: isActive ? 1 : 0,
+                                    transitionDuration: `${TransitionDuration}ms`,
+                                    pointerEvents: isActive ? 'auto' : 'none',
+                                    zIndex: isActive ? 20 : 10
+                                }}
+                                >
                                 <Image
                                     src={item.imageUrl}
                                     alt={item.altText}
                                     fill 
-                                    objectFit='cover'
+                                    className='object-cover'
                                 />
                                 <div 
-                                    className="absolute inset-0 z-0 bg-linear-b bg-primary/30"
+                                    className="absolute inset-0 z-0"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
-                                    <p className="text-text-secondary text-6xl font-extrabold tracking-tight p-4 text-center">
+                                    <p className="text-text-secondary [text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000] text-6xl font-extrabold tracking-tight p-4 text-center">
                                     {item.caption}
                                     </p>
                                     <Link
@@ -79,7 +89,8 @@ const Hero = () => {
                                     </Link>
                                 </div>
                             </div>
-                        ))}
+                        );
+                        })}
                     </div>
                 </div>
             </section>
