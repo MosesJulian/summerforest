@@ -1,28 +1,26 @@
 "use client";
 
 import useWindowEvents from "@/hooks/useWindowEvents";
+import cn from "@/utils/cn";
 import Image from "next/image";
 import { useState } from "react";
 
-let isScrolling: NodeJS.Timeout;
+const shouldShowColor = () => {
+    if (window == null) return false;
+
+    const show: number = 50;
+    return window.scrollY > show;
+};
 
 const Header = () => {
     const [showImage, setShowImage] = useState(false);
+    const [changeColor, setChangeColor] = useState(false);
+
+    const handleColor = () => {
+        setChangeColor(shouldShowColor());
+    }
     
-    const handleScroll = () => {
-        const nav = window?.document.querySelector("nav");
-        
-        nav?.classList.add("-translate-y-full");
-
-        window.clearTimeout(isScrolling);
-        
-        isScrolling = setTimeout(() => {
-            nav?.classList.remove("-translate-y-full");
-        }, 150);
-    };
-
-
-    useWindowEvents ("scroll", handleScroll);
+    useWindowEvents ("scroll", handleColor);
     return (
         <>
             {showImage && (
@@ -37,10 +35,13 @@ const Header = () => {
                     height={500}
                     className="rounded-full"
                 />
-                <span className="text-text-secondary text-xl">Tap anywhere to close</span>
+                <span className="text-white text-xl">Tap anywhere to close</span>
                 </div>
             )}
-            <nav className="w-full px-8 py-4 flex justify-between items-center fixed top-0 left-0 z-20 bg-background/30 backdrop-blur-lg transition-transform duration-500">
+            <nav className={cn(
+                    `w-full px-8 py-4 flex justify-between items-center fixed top-0 left-0 z-20 duration-500 transition-colors`,
+                    changeColor && "bg-white/70 backdrop-blur-lg"
+                )}>
                 <div className="flex items-center justify-around space-x-4">
                     <Image
                         src="/logo.jpeg"
@@ -49,11 +50,21 @@ const Header = () => {
                         className="inline-block rounded-full"
                         onClick={() => setShowImage(true)}
                     />
-                    <span className="font-bold text-text-secondary text-2xl [text-shadow:-1px_-1px_0_#000,1px_-1px_0_#000,-1px_1px_0_#000,1px_1px_0_#000]">Summerforest</span>
+                    <span className={cn("font-bold text-white text-2xl", changeColor && "text-black")}>Summerforest</span>
                 </div>
                 <div className="space-x-4">
-                    <button className="bg-primary text-text-secondary p-2 px-4 rounded-lg hover:bg-secondary hover:scale-110 duration-300">Home</button>
-                    <button className="bg-primary text-text-secondary p-2 px-4 rounded-lg hover:bg-secondary hover:scale-110 duration-300">About</button>
+                    <button className={cn(
+                        `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                        changeColor && "text-black"
+                    )}>
+                        Home
+                    </button>
+                    <button className={cn(
+                        `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                        changeColor && "text-black"
+                    )}>
+                        About
+                    </button>
                 </div>
             </nav>
         </>

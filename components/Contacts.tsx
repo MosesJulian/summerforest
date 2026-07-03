@@ -2,27 +2,27 @@ import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope } from 'react-
 
 const Contacts = () => {
     return (
-        <div className="flex flex-col gap-6 p-12 justify-between">
-            <h2 className="text-4xl font-bold text-text text-center">Contact Us</h2>
+        <div className="flex flex-col gap-6 p-4 md:p-12 justify-between">
+            <h2 className="text-4xl font-bold text-black text-center">Contact Us</h2>
             <div className="grid grid-cols-2 gap-6 items-center justify-around">
                 <div className='flex flex-col gap-6 justify-center md:col-span-1 col-span-2'>
-                    <a href="https://wa.me/6285280010087" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-text hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
+                    <a href="https://wa.me/6285280010087" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
                         <FaWhatsapp size={28} />
                         +62-852-8001-0087
                     </a>
-                    <a href="tel:+6285280010087" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-text hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
+                    <a href="tel:+6285280010087" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
                         <FaPhone size={28} />
                         +62-852-8001-0087
                     </a>
-                    <a href="mailto:summerforest.watukarung@gmail.com" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-text hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
+                    <a href="mailto:summerforest.watukarung@gmail.com" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
                         <FaEnvelope size={28} />
                         summerforest.watukarung@gmail.com
                     </a>
-                    <a href="https://instagram.com/summerforest_watukarung" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-text hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
+                    <a href="https://instagram.com/summerforest_watukarung" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
                         <FaInstagram size={28} />
                         summerforest_watukarung
                     </a>
-                    <a href="https://www.facebook.com/p/Summerforestwatukarung-61575491987223/" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-text hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
+                    <a href="https://www.facebook.com/p/Summerforestwatukarung-61575491987223/" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">
                         <FaFacebook size={28} />
                         Summerforestwatukarung
                     </a> 
