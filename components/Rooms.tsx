@@ -1,8 +1,9 @@
 "use client";
 import cn from "@/utils/cn";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa6";
+import { handleNext, handlePrev } from "@/utils/handleCarousel";
 
 const imageDuration = 7500;
 
@@ -24,7 +25,7 @@ const roomImages = [
 		alt: "Room 4"
 	},
 	{
-		src: "/start1.jpeg",
+		src: "/start2.jpeg",
 		alt: "Room 5"
 	}
 ]
@@ -35,19 +36,19 @@ const breakfastImages = [
 		alt: "Room 1"
 	},
 	{
-		src: "/start1.jpeg",
+		src: "/start2.jpeg",
 		alt: "Room 2"
 	},
 	{
-		src: "/start1.jpeg",
+		src: "/start3.jpeg",
 		alt: "Room 3"
 	},
 	{
-		src: "/start1.jpeg",
+		src: "/start4.jpeg",
 		alt: "Room 4"
 	},
 	{
-		src: "/start1.jpeg",
+		src: "/start2.jpeg",
 		alt: "Room 5"
 	}
 ]
@@ -56,26 +57,37 @@ const Rooms = () => {
 	const [roomImageIndex, setRoomImageIndex] = useState(0);
 	const [breakfastImageIndex, setBreakfastImageIndex] = useState(0);
 
-	const handleNext = (setIndex: Dispatch<SetStateAction<number>>) => setIndex((prev) => (prev + 1) % roomImages.length);
-
-  	const handlePrev = (setIndex: Dispatch<SetStateAction<number>>) => setIndex((prev) => prev <= 0 ? roomImages.length - 1 : prev - 1);
+	useEffect(() => {
+		const interval = setInterval(() => handleNext(roomImages, setRoomImageIndex), imageDuration);
+		return () => clearInterval(interval);
+	}, []);
 
 	useEffect(() => {
-		const interval = setInterval(() => handleNext(setRoomImageIndex), imageDuration);
+		const interval = setInterval(() => handleNext(breakfastImages, setBreakfastImageIndex), imageDuration);
 		return () => clearInterval(interval);
 	}, []);
 	return (
 		<section className="flex flex-col items-center justify-center p-4 w-full gap-4">
-			<h2 className="text-3xl font-bold">Our Rooms</h2>
-			<div className="flex flex-col gap-4 p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30">
+			<h2 className="text-4xl font-bold text-center">Our Rooms</h2>
+			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30">
 				<div className="items-center justify-center relative bg-black/25">
-					<button className="absolute z-10 left-0 top-1/2 -translate-y-1/2" onClick={() => handlePrev(setRoomImageIndex)}><FaLessThan size={30} color="white" /></button>
+					<button
+						className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+						onClick={() => handlePrev(roomImages, setRoomImageIndex)}
+					>
+						<FaLessThan size={30} />
+					</button>
 					<div className="relative w-full min-h-100 h-full">
 						{roomImages.map((item, index) => (
 							<Image key={index} src={item.src} alt={item.alt} fill className={cn("w-full h-auto transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")} />
 						))}
 					</div>
-					<button className="absolute z-10 right-0 top-1/2 -translate-y-1/2" onClick={() => handleNext(setRoomImageIndex)}><FaGreaterThan size={30} color="white" /></button>
+					<button
+						className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+						onClick={() => handleNext(roomImages, setRoomImageIndex)}
+					>
+						<FaGreaterThan size={30} />
+					</button>
 				</div>
 
 				<div className="gap-4 justify-around">
@@ -104,13 +116,23 @@ const Rooms = () => {
 						Our breakfast options:
 					</span>
 					<div className="items-center justify-center relative bg-black/25">
-						<button className="absolute z-10 left-0 top-1/2 -translate-y-1/2" onClick={() => handlePrev(setBreakfastImageIndex)}><FaLessThan size={30} color="white" /></button>
+						<button
+							className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+							onClick={() => handlePrev(breakfastImages, setBreakfastImageIndex)}
+						>
+							<FaLessThan size={30} />
+						</button>
 						<div className="relative w-full min-h-100 h-full rounded-2xl">
 							{breakfastImages.map((item, index) => (
 								<Image key={index} src={item.src} alt={item.alt} fill className={cn("w-full h-auto transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")} />
 							))}
 						</div>
-						<button className="absolute z-10 right-0 top-1/2 -translate-y-1/2" onClick={() => handleNext(setBreakfastImageIndex)}><FaGreaterThan size={30} color="white" /></button>
+						<button
+							className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+							onClick={() => handleNext(breakfastImages, setBreakfastImageIndex)}
+						>
+							<FaGreaterThan size={30} />
+						</button>
 					</div>
 				</div>
 
