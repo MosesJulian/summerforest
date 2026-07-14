@@ -28,7 +28,7 @@ const Header = () => {
                     onClick={() => setShowImage(false)}
                 >
                 <Image 
-                    src="/logo.jpeg"
+                    src="/icon.png"
                     alt="Logo"
                     width={500}
                     height={500}
@@ -86,7 +86,7 @@ const Header = () => {
                 )}>
                 <div className="flex items-center justify-around space-x-4">
                     <Image
-                        src="/logo.jpeg"
+                        src="/icon.png"
                         alt="Logo" width={40}
                         height={40}
                         className="inline-block rounded-full"
