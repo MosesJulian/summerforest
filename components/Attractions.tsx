@@ -52,7 +52,7 @@ const Attractions = () => {
                 >
                     <FaLessThan size={30} />
                 </button>
-                <div className="relative w-full max-w-full sm:max-w-[75%] md:max-w-[50%] min-h-150 h-full">
+                <div className="relative w-full max-w-full md:max-w-[75%] lg:max-w-[50%] min-h-150 h-full">
                     {attractionImages.map((item, index) => (
                         <div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === attractionImageIndex && "opacity-100")}>
                             <Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" />
