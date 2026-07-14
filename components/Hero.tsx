@@ -72,6 +72,7 @@ const Hero = () => {
                                     alt={item.altText}
                                     fill 
                                     className='object-cover'
+                                    loading="lazy"
                                 />
                                 <div 
                                     className="absolute inset-0 z-0 bg-linear-to-b from-black/35 to-primary/35"
