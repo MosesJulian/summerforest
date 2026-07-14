@@ -12,23 +12,23 @@ interface CarouselItem {
 const CarouselItems: CarouselItem[] = [
     {
         imageUrl: '/start1.jpg',
-        altText: 'By the pool side',
-        caption: 'Relax and Enjoy the Poolside View',
+        altText: 'Summerforest Villa pool and arched facade surrounded by tropical greenery',
+        caption: 'Soak in the jacuzzi, feel the sun on your skin, and let the lush jungle surroundings melt every worry away.',
     },
     {
         imageUrl: '/start2.jpg',
-        altText: 'Jacuzzi with a view of the pool',
-        caption: 'Enjoy a Delicious Breakfast with a view of the Pool',
+        altText: 'Outdoor stone pavilion beside the pool at Summerforest Villa Watukarung',
+        caption: 'Lounge in a one-of-a-kind rock sanctuary, carved by nature and designed for those who seek something truly different.',
     },
     {
         imageUrl: '/start3.jpg',
-        altText: 'Cappuccino by the pool',
-        caption: 'Relax and Drink Coffee while enjoying the Scenery',
+        altText: 'Tropical garden view of Summerforest Villa exterior in Watukarung',
+        caption: 'Wake up to the sound of tropical leaves rustling in the breeze, just steps from your private villa.',
     },
     {
         imageUrl: '/start4.jpg',
-        altText: 'Banana yogurt desert',
-        caption: 'Indulge in our Banana Yogurt Dessert',
+        altText: 'Summerforest Villa compound with pool, open living pavilion and palm trees in Watukarung Pacitan',
+        caption: 'Your own slice of Java — a private villa compound where every corner invites you to slow down, breathe deep, and stay a little longer.',
     },
 ]
 

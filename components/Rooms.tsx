@@ -104,10 +104,10 @@ const Rooms = () => {
 				</div>
 
 				<div className="gap-4 justify-around">
-					<span className="text-2xl">
+					<span className="text-lg md:text-2xl">
 						Facilities and amenities for every room:
 					</span>
-					<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 list-disc list-inside text-xl">
+					<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 list-disc list-inside text-base md:text-xl">
 						<li>Parking Area</li>
 						<li>Swimming Pool for All Guests</li>
 						<li>Air Conditioning (AC)</li>
@@ -125,7 +125,7 @@ const Rooms = () => {
 					</ul>
 				</div>
 				<div>
-					<span className="text-2xl">
+					<span className="text-lg md:text-2xl">
 						Our breakfast options:
 					</span>
 					<div className="items-center justify-center relative bg-black/25">
