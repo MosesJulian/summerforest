@@ -54,7 +54,7 @@ const About = () => {
         {sections.map((section, index) => (
           <div key={index}>
             <div
-              className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 items-center", {
+              className={cn("grid grid-cols-1 md:grid-cols-2 gap-12 items-center", {
                 "md:[&>*:first-child]:order-2": section.reverse
               })}
             >
