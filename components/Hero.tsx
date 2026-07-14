@@ -79,7 +79,7 @@ const Hero = () => {
                                     className="absolute inset-0 z-0 bg-linear-to-b from-black/35 to-primary/35"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
-                                    <p className="text-white text-6xl font-extrabold tracking-tight p-4 text-center">
+                                    <p className="text-white text-4xl lg:text-6xl font-extrabold tracking-tight p-4 text-center">
                                     {item.caption}
                                     </p>
                                     <Link
