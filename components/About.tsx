@@ -1,7 +1,6 @@
 "use client";
 import cn from "@/utils/cn";
 import Image from "next/image";
-import { useEffect } from "react";
 
 const sections = [
   {
@@ -31,23 +30,6 @@ const sections = [
 ];
 
 const About = () => {
-    
-    useEffect(() => {
-        const inViewport = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                entry.target.classList.toggle("in-viewport", entry.isIntersecting);
-            });
-        };
-
-        const observer = new IntersectionObserver(inViewport, {
-            threshold: 0.15,
-        });
-
-        document.querySelectorAll("[data-inviewport]").forEach((section) => {
-            observer.observe(section);
-        })
-    }, []);
-
     return (
     <section id="about" className="scroll-mt-18 max-w-5xl mx-auto px-4 py-16">
       <div className="flex flex-col gap-16">
