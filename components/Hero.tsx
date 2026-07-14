@@ -11,22 +11,22 @@ interface CarouselItem {
 
 const CarouselItems: CarouselItem[] = [
     {
-        imageUrl: '/start1.jpeg',
+        imageUrl: '/start1.jpg',
         altText: 'By the pool side',
         caption: 'Relax and Enjoy the Poolside View',
     },
     {
-        imageUrl: '/start2.jpeg',
-        altText: 'Breakfast time',
+        imageUrl: '/start2.jpg',
+        altText: 'Jacuzzi with a view of the pool',
         caption: 'Enjoy a Delicious Breakfast with a view of the Pool',
     },
     {
-        imageUrl: '/start3.jpeg',
+        imageUrl: '/start3.jpg',
         altText: 'Cappuccino by the pool',
         caption: 'Relax and Drink Coffee while enjoying the Scenery',
     },
     {
-        imageUrl: '/start4.jpeg',
+        imageUrl: '/start4.jpg',
         altText: 'Banana yogurt desert',
         caption: 'Indulge in our Banana Yogurt Dessert',
     },
@@ -49,7 +49,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className='w-full h-screen block overflow-hidden'>
+        <section className='w-full h-screen block overflow-hidden' id="hero">
                 <div className="relative z-0 w-full h-full overflow-hidden">
                     <div
                         className='relative w-full h-full'
@@ -74,7 +74,7 @@ const Hero = () => {
                                     className='object-cover'
                                 />
                                 <div 
-                                    className="absolute inset-0 z-0 bg-linear-to-b from-black/25 to-primary/25"
+                                    className="absolute inset-0 z-0 bg-linear-to-b from-black/35 to-primary/35"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
                                     <p className="text-white text-6xl font-extrabold tracking-tight p-4 text-center">

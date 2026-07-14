@@ -9,29 +9,29 @@ const imageDuration = 7500;
 
 const attractionImages = [
 	{
-		src: "/start1.jpeg",
-		alt: "Room 1",
-		description: "Description for Room 1"
+		src: "/attraction1.jpg",
+		alt: "Goa Gong",
+		description: "Goa Gong is a famous cave located in Pacitan, East Java, Indonesia. It is known for its stunning stalactites and stalagmites formations, as well as its unique natural beauty. The cave is a popular tourist destination and is often visited by those interested in exploring natural wonders and geological formations."
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 2",
-        description: "Description for Room 2"
+		src: "/attraction2.jpg",
+		alt: "Pantai Waduk",
+        description: "Pantai Waduk is a beautiful beach located in the heart of the forest, offering a serene environment for visitors to relax and enjoy the natural surroundings."
 	},
 	{
-		src: "/start3.jpeg",
-		alt: "Room 3",
-        description: "Description for Room 3"
+		src: "/attraction3.jpg",
+		alt: "Pantai Watukarung",
+        description: "Pantai Watukarung is a picturesque beach known for its clear waters and scenic views, making it a favorite spot for tourists and locals alike."
 	},
 	{
-		src: "/start4.jpeg",
-		alt: "Room 4",
-        description: "Description for Room 4"
+		src: "/attraction4.jpg",
+		alt: "Kali Cokel",
+        description: "Kali Cokel is a charming river that flows through the region, offering opportunities for hiking, picnicking, and enjoying the natural landscape."
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 5",
-        description: "Description for Room 5"
+		src: "/attraction5.jpg",
+		alt: "Puncak Kasap",
+        description: "Puncak Kasap is a scenic mountain peak offering breathtaking views of the surrounding landscape."
 	}
 ]
 
@@ -43,7 +43,7 @@ const Attractions = () => {
             return () => clearInterval(interval);
     }, []);
     return (
-        <section className="bg-cyan-600/75 w-full h-auto items-center justify-center flex flex-col gap-4 py-8">
+        <section className="bg-cyan-600/75 w-full h-auto items-center justify-center flex flex-col gap-4 py-8 scroll-mt-18" id="attractions">
             <h2 className="text-4xl font-bold text-white text-center">Nearby Attractions</h2>
             <div className="flex w-full items-stretch justify-center p-4">
                 <button

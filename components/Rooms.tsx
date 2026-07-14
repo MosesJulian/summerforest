@@ -9,47 +9,55 @@ const imageDuration = 7500;
 
 const roomImages = [
 	{
-		src: "/start1.jpeg",
-		alt: "Room 1"
+		src: "/room1.jpg",
+		alt: "Bed view of the room"
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 2"
+		src: "/room2.jpg",
+		alt: "Outside view of the room"
 	},
 	{
-		src: "/start3.jpeg",
-		alt: "Room 3"
+		src: "/room3.jpg",
+		alt: "Room TV and table"
 	},
 	{
-		src: "/start4.jpeg",
-		alt: "Room 4"
+		src: "/room4.jpg",
+		alt: "Bathroom sink and mirror"
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 5"
-	}
+		src: "/room5.jpg",
+		alt: "Bathroom bathtub and shower"
+	},
+	{
+		src: "/room6.jpg",
+		alt: "Bathroom toilet and bath basket"
+	},
+	{
+		src: "/room7.jpg",
+		alt: "Room wardrobe and drawers"
+	},
 ]
 
 const breakfastImages = [
 	{
-		src: "/start1.jpeg",
-		alt: "Room 1"
+		src: "/breakfast1.jpg",
+		alt: "Bread, eggs, and sausage"
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 2"
+		src: "/breakfast2.jpg",
+		alt: "Bread, eggs, and green beans"
 	},
 	{
-		src: "/start3.jpeg",
-		alt: "Room 3"
+		src: "/breakfast3.jpg",
+		alt: "Mie Goreng with fried egg and vegetables"
 	},
 	{
-		src: "/start4.jpeg",
-		alt: "Room 4"
+		src: "/breakfast4.jpg",
+		alt: "Nasi Goreng with fried egg and vegetables"
 	},
 	{
-		src: "/start2.jpeg",
-		alt: "Room 5"
+		src: "/breakfast5.jpg",
+		alt: "Juice, coffee, or tea included"
 	}
 ]
 
@@ -67,7 +75,7 @@ const Rooms = () => {
 		return () => clearInterval(interval);
 	}, []);
 	return (
-		<section className="flex flex-col items-center justify-center p-4 w-full gap-4">
+		<section className="flex flex-col items-center justify-center p-4 w-full gap-4 scroll-mt-18" id="rooms">
 			<h2 className="text-4xl font-bold text-center">Our Rooms</h2>
 			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30">
 				<div className="items-center justify-center relative bg-black/25">
@@ -77,9 +85,14 @@ const Rooms = () => {
 					>
 						<FaLessThan size={30} />
 					</button>
-					<div className="relative w-full min-h-100 h-full">
+					<div className="relative w-full min-h-150 h-full">
 						{roomImages.map((item, index) => (
-							<Image key={index} src={item.src} alt={item.alt} fill className={cn("w-full h-auto transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")} />
+							<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")}>
+								<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} />
+								<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+									<h3 className="text-xl font-bold">{item.alt}</h3>
+								</div>
+							</div>
 						))}
 					</div>
 					<button
@@ -122,9 +135,14 @@ const Rooms = () => {
 						>
 							<FaLessThan size={30} />
 						</button>
-						<div className="relative w-full min-h-100 h-full rounded-2xl">
+						<div className="relative w-full min-h-150 h-full rounded-2xl">
 							{breakfastImages.map((item, index) => (
-								<Image key={index} src={item.src} alt={item.alt} fill className={cn("w-full h-auto transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")} />
+								<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")}>
+									<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} />
+									<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
+										<h3 className="text-xl font-bold">{item.alt}</h3>
+									</div>
+								</div>
 							))}
 						</div>
 						<button

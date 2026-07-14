@@ -1,26 +1,23 @@
 "use client";
 
-import useWindowEvents from "@/hooks/useWindowEvents";
 import cn from "@/utils/cn";
 import Image from "next/image";
-import { useState } from "react";
-
-const shouldShowColor = () => {
-    if (window == null) return false;
-
-    const show: number = 50;
-    return window.scrollY > show;
-};
+import { useEffect, useState } from "react";
 
 const Header = () => {
     const [showImage, setShowImage] = useState(false);
     const [changeColor, setChangeColor] = useState(false);
 
-    const handleColor = () => {
-        setChangeColor(shouldShowColor());
-    }
-    
-    useWindowEvents ("scroll", handleColor);
+    useEffect(() => {
+    const handleScroll = () => {
+        setChangeColor(window.scrollY > 50);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
         <>
             {showImage && (
@@ -53,18 +50,51 @@ const Header = () => {
                     <span className={cn("font-bold text-white text-2xl", changeColor && "text-black")}>Summerforest</span>
                 </div>
                 <div className="space-x-4">
-                    <button className={cn(
-                        `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
-                        changeColor && "text-black"
-                    )}>
+                    <a 
+                        href="#hero"
+                        className={cn(
+                            `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                            changeColor && "text-black"
+                        )}
+                    >
                         Home
-                    </button>
-                    <button className={cn(
-                        `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
-                        changeColor && "text-black"
-                    )}>
+                    </a>
+                    <a 
+                        href="#about"
+                        className={cn(
+                            `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                            changeColor && "text-black"
+                        )}
+                    >
                         About
-                    </button>
+                    </a>
+                    <a 
+                        href="#rooms"
+                        className={cn(
+                            `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                            changeColor && "text-black"
+                        )}
+                    >
+                        Rooms
+                    </a>
+                    <a 
+                        href="#attractions"
+                        className={cn(
+                            `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                            changeColor && "text-black"
+                        )}
+                    >
+                        Attractions
+                    </a>
+                    <a 
+                        href="#contacts"
+                        className={cn(
+                            `text-xl font-semibold text-white p-2 px-4 rounded-lg hover:bg-secondary hover:text-white hover:scale-110 duration-300`,
+                            changeColor && "text-black"
+                        )}
+                    >
+                        Contacts
+                    </a>
                 </div>
             </nav>
         </>

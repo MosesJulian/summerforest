@@ -19,6 +19,10 @@ body {
   font-family: var(--font-ubuntu), var(--font-ubuntu-mono), Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 [data-inviewport= "fade-slide-right"] {
   opacity: 0;
   transform: translateX(150px);

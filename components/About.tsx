@@ -21,7 +21,7 @@ const About = () => {
     }, []);
 
     return (
-        <section className="flex flex-col overflow-x-hidden">
+        <section className="flex flex-col overflow-x-hidden scroll-mt-18" id="about">
             <div 
             data-inviewport="fade-slide-left"
             className="gap-6 items-center justify-between bg-linear-to-b from-primary/60 to-secondary/60 grid grid-cols-5">
@@ -30,14 +30,14 @@ const About = () => {
                         
                 </p>
                 <div className="relative w-full h-full min-h-125 col-span-2">
-                    <Image src="/start1.jpeg" alt="About Summerforest" fill className="object-cover rounded-bl-full shadow-lg h-full" loading="lazy" />
+                    <Image src="/about1.jpg" alt="About Summerforest" fill className="object-cover rounded-bl-full shadow-lg h-full" loading="lazy" />
                 </div>
             </div>
             <div
             data-inviewport="fade-slide-right"
             className="gap-6 items-center justify-between bg-linear-to-b from-secondary/60 to-primary/60 grid grid-cols-5">
                 <div className="relative w-full h-full min-h-125 col-span-2">
-                    <Image src="/start2.jpeg" alt="About Summerforest" fill className="object-cover rounded-tr-full shadow-lg h-full" loading="lazy" />
+                    <Image src="/about2.jpg" alt="About Summerforest" fill className="object-cover rounded-tr-full shadow-lg h-full" loading="lazy" />
                 </div>
                 <p className="text-base md:text-2xl lg:text-3xl xl:text-4xl leading-11 text-black text-right px-4 lg:px-24 font-semibold col-span-3">
                     Nestled in a serene forest setting, <span className="text-white">Summerforest</span> offers a <span className="text-white">unique blend of rustic charm and modern comfort.</span> Whether you&apos;re seeking a peaceful getaway or an exciting outdoor adventure, our retreat provides the perfect backdrop for <span className="text-white">creating lasting memories with family and friends.</span>

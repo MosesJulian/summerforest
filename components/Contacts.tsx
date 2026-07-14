@@ -2,7 +2,7 @@ import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope } from 'react-
 
 const Contacts = () => {
     return (
-        <div className="flex flex-col gap-6 p-4 md:p-12 justify-between">
+        <div className="flex flex-col gap-6 p-4 md:p-12 justify-between scroll-mt-18" id="contacts">
             <h2 className="text-4xl font-bold text-black text-center">Contact Us</h2>
             <div className="grid grid-cols-2 gap-6 items-center justify-around">
                 <div className='flex flex-col gap-6 justify-center md:col-span-1 col-span-2'>
