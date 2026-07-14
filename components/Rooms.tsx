@@ -107,7 +107,7 @@ const Rooms = () => {
 					<span className="text-lg md:text-2xl">
 						Facilities and amenities for every room:
 					</span>
-					<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 list-disc list-inside text-base md:text-xl">
+					<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 list-disc list-inside text-base md:text-xl text-gray-500">
 						<li>Parking Area</li>
 						<li>Swimming Pool for All Guests</li>
 						<li>Air Conditioning (AC)</li>
