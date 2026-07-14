@@ -11,7 +11,7 @@ const attractionImages = [
 	{
 		src: "/attraction1.jpg",
 		alt: "Goa Gong",
-		description: "Goa Gong is a famous cave located in Pacitan, East Java, Indonesia. It is known for its stunning stalactites and stalagmites formations, as well as its unique natural beauty. The cave is a popular tourist destination and is often visited by those interested in exploring natural wonders and geological formations."
+		description: "Goa Gong is known for its stalactite and stalagmite formations, as well as its unique natural beauty. The cave is a popular tourist destination by those interested in exploring natural wonders and geological formations."
 	},
 	{
 		src: "/attraction2.jpg",
@@ -31,7 +31,7 @@ const attractionImages = [
 	{
 		src: "/attraction5.jpg",
 		alt: "Puncak Kasap",
-        description: "Puncak Kasap is a scenic mountain peak offering breathtaking views of the surrounding landscape."
+        description: "Puncak Kasap is a scenic mountain peak offering breathtaking views of the surrounding landscape. It is a popular destination for hikers and nature enthusiasts looking to experience the beauty of the area."
 	}
 ]
 
