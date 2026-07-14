@@ -1,6 +1,34 @@
 "use client";
+import cn from "@/utils/cn";
 import Image from "next/image";
 import { useEffect } from "react";
+
+const sections = [
+  {
+    tag: "Watukarung, Pacitan",
+    heading: "Where the jungle meets your morning coffee",
+    body: "Nestled in the hills just minutes from Watukarung's famous surf break, Summerforest is where you come to slow down — or not. Whether you're chasing waves or doing absolutely nothing by the pool, we've got you.",
+    src: "/about1.jpg",
+    alt: "Pool and jacuzzi at Summerforest Villa surrounded by jungle",
+    reverse: false,
+  },
+  {
+    tag: "Nature & comfort",
+    heading: "Surrounded by nature, not a single compromise",
+    body: "Lush tropical gardens, open-air pavilions carved into the hillside, and a pool so clear it hardly feels real. Every corner of Summerforest was designed to make you forget what day it is.",
+    src: "/about2.jpg",
+    alt: "Jungle pavilion and gardens at Summerforest Villa Watukarung",
+    reverse: true,
+  },
+  {
+    tag: "Stay with us",
+    heading: "Your home away from home — just much better",
+    body: "Thoughtfully designed rooms, fresh local breakfasts, and staff who actually care. Come for the surf, stay for the vibes, leave already planning your next trip back.",
+    src: "/about3.jpg",
+    alt: "Summerforest Villa exterior with tropical garden pathway",
+    reverse: false,
+  },
+];
 
 const About = () => {
     
@@ -21,29 +49,35 @@ const About = () => {
     }, []);
 
     return (
-        <section className="flex flex-col overflow-x-hidden scroll-mt-18" id="about">
-            <div 
-            data-inviewport="fade-slide-left"
-            className="gap-6 items-center justify-between bg-linear-to-b from-primary/60 to-secondary/60 grid grid-cols-5">
-                <p className="text-base sm:text-2xl md:text-3xl lg:text-4xl md:leading-10 leading-6 text-black text-left px-4 lg:px-24 font-semibold col-span-3">
-                    <span className="text-white">Summerforest</span> is dedicated to ensuring your retreat is as <span className="text-white">comfortable, hassle-free, and memorable</span> as possible. We provide guests with a full range of <span className="text-white">premium amenities and personalized services.</span> With our attentive staff, your escape can be as perfectly relaxing or adventurously active as you desire.
-                        
-                </p>
-                <div className="relative w-full h-full min-h-125 max-h-150 col-span-2">
-                    <Image src="/about1.jpg" alt="About Summerforest" fill className="object-cover rounded-bl-full shadow-lg h-full" loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
-                </div>
-            </div>
+    <section id="about" className="scroll-mt-18 max-w-5xl mx-auto px-4 py-16">
+      <div className="flex flex-col gap-16">
+        {sections.map((section, index) => (
+          <div key={index}>
             <div
-            data-inviewport="fade-slide-right"
-            className="gap-6 items-center justify-between bg-linear-to-b from-secondary/60 to-primary/60 grid grid-cols-5">
-                <div className="relative w-full h-full min-h-125 max-h-150 col-span-2">
-                    <Image src="/about2.jpg" alt="About Summerforest" fill className="object-cover rounded-tr-full shadow-lg h-full" loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
-                </div>
-                <p className="text-base sm:text-2xl md:text-3xl lg:text-4xl md:leading-10 leading-6 text-black text-right px-4 lg:px-24 font-semibold col-span-3">
-                    Nestled in a serene forest setting, <span className="text-white">Summerforest</span> offers a <span className="text-white">unique blend of rustic charm and modern comfort.</span> Whether you&apos;re seeking a peaceful getaway or an exciting outdoor adventure, our retreat provides the perfect backdrop for <span className="text-white">creating lasting memories with family and friends.</span>
-                </p>
+              className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 items-center", {
+                "md:[&>*:first-child]:order-2": section.reverse
+              })}
+            >
+              <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden">
+                <Image src={section.src} alt={section.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <span className="text-xs px-3 py-1 rounded-md bg-green-100 text-green-800 w-fit">
+                  {section.tag}
+                </span>
+                <h2 className="text-2xl font-medium leading-snug">{section.heading}</h2>
+                <p className="text-gray-500 leading-relaxed">{section.body}</p>
+              </div>
             </div>
-        </section>
+
+            {index < sections.length - 1 && (
+              <hr className="mt-16 border-gray-200" />
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
     )
 };
 
