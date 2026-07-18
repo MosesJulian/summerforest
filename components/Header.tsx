@@ -92,7 +92,7 @@ const Header = () => {
                         className="inline-block rounded-full"
                         onClick={() => setShowImage(true)}
                     />
-                    <span className={cn("font-bold text-white text-2xl", changeColor && "text-black")}>Summerforest</span>
+                    <span className={cn("font-bold text-white text-2xl italic", changeColor && "text-black")}>Summerforest</span>
                 </div>
 
                 <div className="space-x-4 lg:space-x-8 hidden lg:flex">

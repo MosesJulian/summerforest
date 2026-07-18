@@ -3,7 +3,7 @@ import { FaWhatsapp, FaInstagram, FaFacebook, FaPhone, FaEnvelope } from 'react-
 const Contacts = () => {
     return (
         <div className="flex flex-col gap-6 p-4 md:p-12 justify-between scroll-mt-18" id="contacts">
-            <h2 className="text-4xl font-bold text-black text-center">Contact Us</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black text-center">Contact Us</h2>
             <div className="grid grid-cols-2 gap-6 items-center justify-around">
                 <div className='flex flex-col gap-6 justify-center md:col-span-1 col-span-2'>
                     <a href="https://wa.me/6285280010087" target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center text-black hover:text-secondary hover:scale-105 transition duration-300 text-wrap wrap-anywhere">

@@ -76,7 +76,7 @@ const Rooms = () => {
 	}, []);
 	return (
 		<section className="flex flex-col items-center justify-center p-4 w-full gap-4 scroll-mt-18" id="rooms">
-			<h2 className="text-4xl font-bold text-center">Our Rooms</h2>
+			<h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">Our Rooms</h2>
 			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30">
 				<div className="items-center justify-center relative bg-black/25">
 					<button
@@ -119,7 +119,7 @@ const Rooms = () => {
 						<li>Hairdryer</li>
 						<li>A balcony</li>
 						<li>Electric water kettle</li>
-						<li>Room size 30m<span className="align-super text-xs">2</span></li>
+						<li>Room size 35m<span className="align-super text-xs">2</span></li>
 						<li>Bathtub</li>
 						<li>A lush and cool view of the forest</li>
 					</ul>
