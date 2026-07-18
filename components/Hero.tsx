@@ -13,7 +13,7 @@ const CarouselItems: CarouselItem[] = [
     {
         imageUrl: '/start1.jpg',
         altText: 'Summerforest Villa pool and arched facade surrounded by tropical greenery',
-        caption: 'Soak in the jacuzzi, feel the sun on your skin, and let the lush jungle surroundings melt every worry away.',
+        caption: 'Soak in the pool, feel the sun on your skin, and let the lush jungle surroundings melt every worry away.',
     },
     {
         imageUrl: '/start2.jpg',
@@ -23,12 +23,12 @@ const CarouselItems: CarouselItem[] = [
     {
         imageUrl: '/start3.jpg',
         altText: 'Tropical garden view of Summerforest Villa exterior in Watukarung',
-        caption: 'Wake up to the sound of tropical leaves rustling in the breeze, just steps from your private villa.',
+        caption: 'Wake up to the sound of tropical leaves rustling in the breeze, just steps away from your room.',
     },
     {
         imageUrl: '/start4.jpg',
         altText: 'Summerforest Villa compound with pool, open living pavilion and palm trees in Watukarung Pacitan',
-        caption: 'Your own slice of Java — a private villa compound where every corner invites you to slow down, breathe deep, and stay a little longer.',
+        caption: 'Your own slice of Java — a villa compound where every corner invites you to slow down, breathe deep, and stay a little longer.',
     },
 ]
 
@@ -79,7 +79,7 @@ const Hero = () => {
                                     className="absolute inset-0 z-0 bg-linear-to-b from-black/35 to-primary/35"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
-                                    <p className="text-white text-4xl lg:text-6xl font-extrabold tracking-tight p-4 text-center">
+                                    <p className="text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-tight p-4 text-center">
                                     {item.caption}
                                     </p>
                                     <Link
