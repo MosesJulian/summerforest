@@ -144,7 +144,7 @@ const Header = () => {
                 </div>
                 
                 <div className="lg:hidden">
-                    <button className="text-white focus:outline-none" onClick={() => setShowMenu(true)}>
+                    <button className={cn("text-white focus:outline-none", changeColor && "text-black")} onClick={() => setShowMenu(true)}>
                         <FaBars size={24} />
                     </button>
                 </div>
