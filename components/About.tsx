@@ -22,7 +22,7 @@ const sections = [
   {
     tag: "Stay with us",
     heading: "Your home away from home — just much better",
-    body: "Thoughtfully designed rooms, fresh local breakfasts, and staff who actually care. Come for the surf, stay for the vibes, leave already planning your next trip back.",
+    body: "Thoughtfully designed rooms, fresh local breakfasts, and staff who actually care, and is attentive. Come for the surf, stay for the vibes, leave already planning your next trip back.",
     src: "/about3.jpg",
     alt: "Summerforest Villa exterior with tropical garden pathway",
     reverse: false,
