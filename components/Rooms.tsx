@@ -90,7 +90,7 @@ const Rooms = () => {
 							<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")}>
 								<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
 								<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
-									<h3 className="text-xl font-bold">{item.alt}</h3>
+									<h3 className="text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 								</div>
 							</div>
 						))}
@@ -140,7 +140,7 @@ const Rooms = () => {
 								<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")}>
 									<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
 									<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
-										<h3 className="text-xl font-bold">{item.alt}</h3>
+										<h3 className="text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 									</div>
 								</div>
 							))}
