@@ -31,8 +31,8 @@ const sections = [
 
 const About = () => {
     return (
-    <section id="about" className="scroll-mt-18 max-w-5xl mx-auto px-4 py-16">
-      <div className="flex flex-col gap-16">
+    <section id="about" className="scroll-mt-18 max-w-5xl mx-auto py-4 px-4 md:py-16">
+      <div className="flex flex-col gap-4 md:gap-16">
         {sections.map((section, index) => (
           <div key={index}>
             <div
@@ -54,7 +54,7 @@ const About = () => {
             </div>
 
             {index < sections.length - 1 && (
-              <hr className="mt-16 border-gray-200" />
+              <hr className="mt-4 md:mt-16 border-gray-200" />
             )}
           </div>
         ))}

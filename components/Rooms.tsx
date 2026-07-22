@@ -9,32 +9,24 @@ const imageDuration = 7500;
 
 const roomImages = [
 	{
-		src: "/room1.jpg",
-		alt: "Bed view of the room"
+		src: "/room1.jpeg",
+		alt: "Bed, wardrobe, and AC"
 	},
 	{
-		src: "/room2.jpg",
-		alt: "Outside view of the room"
+		src: "/room2.jpeg",
+		alt: "TV, table, and shelf"
 	},
 	{
-		src: "/room3.jpg",
-		alt: "Room TV and table"
+		src: "/room3.jpeg",
+		alt: "Bathroom sink, shower, and toilet"
 	},
 	{
-		src: "/room4.jpg",
-		alt: "Bathroom sink and mirror"
+		src: "/room4.jpeg",
+		alt: "Bathroom bathtub and sink"
 	},
 	{
-		src: "/room5.jpg",
-		alt: "Bathroom bathtub and shower"
-	},
-	{
-		src: "/room6.jpg",
-		alt: "Bathroom toilet and bath basket"
-	},
-	{
-		src: "/room7.jpg",
-		alt: "Room wardrobe and drawers"
+		src: "/room5.jpeg",
+		alt: "Outside view from the room"
 	},
 ]
 
@@ -85,10 +77,10 @@ const Rooms = () => {
 					>
 						<FaLessThan size={30} />
 					</button>
-					<div className="relative w-full min-h-150 h-full">
+					<div className="relative w-full min-h-150">
 						{roomImages.map((item, index) => (
 							<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")}>
-								<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
+								<Image src={item.src} alt={item.alt} fill className={cn("object-cover")} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
 								<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
 									<h3 className="text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 								</div>
