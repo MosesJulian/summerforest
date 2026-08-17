@@ -48,7 +48,7 @@ const Attractions = () => {
             <div className="flex w-full items-stretch justify-center p-4">
                 <div className="relative w-full lg:w-[75%] xl:w-[50%] aspect-video">
                     <button
-                        className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-2"
+                        className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
                         onClick={() => handlePrev(attractionImages, setAttractionImageIndex)}
                     >
                         <FaLessThan size={30} />
@@ -63,7 +63,7 @@ const Attractions = () => {
                         </div>
                     ))}
                     <button
-                        className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-2"
+                        className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
                         onClick={() => handleNext(attractionImages, setAttractionImageIndex)}
                     >
                         <FaGreaterThan size={30} />

@@ -72,7 +72,7 @@ const Rooms = () => {
 			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30 w-full lg:w-[75%] xl:w-[50%]">
 				<div className="items-center justify-center relative bg-black/25">
 					<button
-						className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+						className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
 						onClick={() => handlePrev(roomImages, setRoomImageIndex)}
 					>
 						<FaLessThan size={30} />
@@ -89,7 +89,7 @@ const Rooms = () => {
 						
 					</div>
 					<button
-						className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+						className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
 						onClick={() => handleNext(roomImages, setRoomImageIndex)}
 					>
 						<FaGreaterThan size={30} />
@@ -123,7 +123,7 @@ const Rooms = () => {
 					</span>
 					<div className="items-center justify-center relative bg-black/25">
 						<button
-							className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+							className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
 							onClick={() => handlePrev(breakfastImages, setBreakfastImageIndex)}
 						>
 							<FaLessThan size={30} />
@@ -139,7 +139,7 @@ const Rooms = () => {
 							))}
 						</div>
 						<button
-							className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
+							className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white px-1"
 							onClick={() => handleNext(breakfastImages, setBreakfastImageIndex)}
 						>
 							<FaGreaterThan size={30} />
