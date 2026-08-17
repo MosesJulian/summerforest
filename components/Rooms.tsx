@@ -69,7 +69,7 @@ const Rooms = () => {
 	return (
 		<section className="flex flex-col items-center justify-center p-4 w-full gap-4 scroll-mt-18" id="rooms">
 			<h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">Our Rooms</h2>
-			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30">
+			<div className="flex flex-col gap-4 p-4 sm:p-8 rounded-2xl border border-primary/30 shadow-2xl shadow-secondary/30 w-full lg:w-[75%] xl:w-[50%]">
 				<div className="items-center justify-center relative bg-black/25">
 					<button
 						className="absolute z-10 left-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
@@ -77,15 +77,16 @@ const Rooms = () => {
 					>
 						<FaLessThan size={30} />
 					</button>
-					<div className="relative w-full min-h-150">
+					<div className="relative w-full aspect-video">
 						{roomImages.map((item, index) => (
-							<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === roomImageIndex && "opacity-100")}>
-								<Image src={item.src} alt={item.alt} fill className={cn("object-cover")} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
+							<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 ", index === roomImageIndex && "opacity-100")}>
+								<Image src={item.src} alt={item.alt} fill className={cn("object-cover")} loading="lazy" sizes="100vw" />
 								<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
 									<h3 className="text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 								</div>
 							</div>
 						))}
+						
 					</div>
 					<button
 						className="absolute z-10 right-0 top-1/2 -translate-y-1/2 h-full hover:bg-black/20 transition-colors duration-300 text-white"
@@ -127,10 +128,10 @@ const Rooms = () => {
 						>
 							<FaLessThan size={30} />
 						</button>
-						<div className="relative w-full min-h-150 h-full rounded-2xl">
+						<div className="relative w-full rounded-2xl aspect-video">
 							{breakfastImages.map((item, index) => (
 								<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")}>
-									<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw" />
+									<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw" />
 									<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4">
 										<h3 className="text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 									</div>
