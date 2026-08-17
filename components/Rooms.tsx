@@ -132,7 +132,7 @@ const Rooms = () => {
 							{breakfastImages.map((item, index) => (
 								<div key={index} className={cn("absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0", index === breakfastImageIndex && "opacity-100")}>
 									<Image src={item.src} alt={item.alt} fill className={cn("object-cover w-full h-auto")} loading="lazy" sizes="100vw" />
-									<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p2- md:p-4">
+									<div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 md:p-4">
 										<h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold">{item.alt}</h3>
 									</div>
 								</div>
